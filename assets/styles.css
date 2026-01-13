@@ -1,0 +1,287 @@
+/* =========================
+   RESET & BASE
+   ========================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f5f5f5;
+  padding: 20px;
+}
+
+#app {
+  max-width: 1000px;
+  margin: auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header img {
+  height: 50px;
+}
+
+h1 {
+  font-size: 28px;
+  color: #333;
+}
+
+/* =========================
+   TABLE
+   ========================= */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th {
+  background: #249cf4;
+  color: #ffffff;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.tax-cell {
+  color: #666;
+  font-style: italic;
+}
+
+.strong {
+  font-weight: 600;
+}
+
+/* =========================
+   FORM ELEMENTS
+   ========================= */
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+input[type="number"] {
+  text-align: right;
+}
+
+input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.checkbox-cell {
+  text-align: center;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-add {
+  background: #249cf4;
+  color: #ffffff;
+  margin: 20px 0;
+}
+
+.btn-remove {
+  background: #f44336;
+  color: #ffffff;
+  width: 100%;
+}
+
+/* =========================
+   TOTALS
+   ========================= */
+
+.totals {
+  margin-top: 30px;
+  border-top: 2px solid #333;
+  padding-top: 20px;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.total-value {
+  text-align: right;
+}
+
+.bordered {
+  border-top: 1px solid #ddd;
+  padding-top: 12px;
+}
+
+.discount-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.discount-input input {
+  width: 120px;
+}
+
+.total-row.final {
+  font-size: 20px;
+  font-weight: 700;
+  color: #249cf4;
+  border-top: 2px solid #249cf4;
+  padding-top: 15px;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  #app {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  /* ----- Table to Cards ----- */
+
+  thead {
+    display: none;
+  }
+
+  table,
+  tbody,
+  tr,
+  td {
+    display: block;
+    width: 100%;
+  }
+
+  tr {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+
+  td {
+    border: none;
+    padding: 6px 0;
+  }
+
+  td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 4px;
+  }
+
+  .checkbox-cell {
+    text-align: left;
+  }
+
+  /* ----- Totals (FIXED) ----- */
+
+  .total-row {
+    display: block;
+    margin-bottom: 14px;
+  }
+
+  .total-row span:first-child {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 6px;
+  }
+
+  .total-row span:last-child,
+  .total-value {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .discount-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .discount-input input {
+    width: 100px;
+  }
+
+  .total-row.final span:last-child {
+    font-size: 22px;
+    font-weight: 700;
+  }
+}
